@@ -1182,6 +1182,25 @@ h6 {
     width: 17px !important;
     height: 17px !important;
   }
+
+  .logo {
+    font-size: 1.15rem !important;
+    gap: 6px !important;
+  }
+
+  .logo img {
+    height: 32px !important;
+    width: 32px !important;
+  }
+
+  .nav-actions {
+    gap: 8px !important;
+  }
+
+  .nav-actions .btn {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+  }
 }
 
 @media (max-width: 480px) {
