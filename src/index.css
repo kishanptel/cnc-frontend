@@ -1151,11 +1151,26 @@ h6 {
   }
 
   .toast-container {
-    top: 16px !important;
+    top: 130px !important;
     right: 16px !important;
     left: 16px !important;
     max-width: calc(100% - 32px) !important;
     width: auto !important;
+  }
+
+  .toast-item {
+    padding: 10px 14px !important;
+    gap: 8px !important;
+    border-bottom-width: 3px !important;
+  }
+
+  .toast-message {
+    font-size: 0.8rem !important;
+  }
+
+  .toast-icon svg {
+    width: 15px !important;
+    height: 15px !important;
   }
 }
 
