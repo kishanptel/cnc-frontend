@@ -245,7 +245,7 @@ export default function App() {
                     }
                   }} 
                   className="btn btn-primary btn-sm"
-                  style={{ minWidth: '100px', background: 'var(--red)', borderColor: 'var(--red)' }}
+                  style={{ minWidth: '100px' }}
                 >
                   Yes, Delete
                 </button>
