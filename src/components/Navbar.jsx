@@ -58,10 +58,10 @@ export default function Navbar({ currentUser, logout, cart, updateQuantity, remo
           <Link to="/" className="logo" onClick={() => setCartOpen(false)}>
             <img 
               src="/sweet_shop_logo.png" 
-              alt="Sweet Shop Logo" 
+              alt="Cacao & Crumb Logo" 
               style={{ height: '38px', width: '38px', borderRadius: '50%', objectFit: 'cover', background: '#fff', border: '1px solid var(--border-mid)' }} 
             />
-            <span className="logo-wordmark">Sweet Shop</span>
+            <span className="logo-wordmark">Cacao & Crumb</span>
           </Link>
           
           {/* Navigation Links (Desktop Only) */}

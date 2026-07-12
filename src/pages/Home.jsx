@@ -8,7 +8,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <span className="section-label" data-aos="fade-up">Welcome to Sweet Shop</span>
+          <span className="section-label" data-aos="fade-up">Welcome to Cacao & Crumb</span>
           <h1 data-aos="fade-up" data-aos-delay="100">
             Love At <em>First Bite</em>
           </h1>

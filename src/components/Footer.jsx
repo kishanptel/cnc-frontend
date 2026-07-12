@@ -13,10 +13,10 @@ export default function Footer() {
             <Link to="/" className="logo">
               <img
                 src="/sweet_shop_logo.png"
-                alt="Sweet Shop Logo"
+                alt="Cacao & Crumb Logo"
                 style={{ height: '38px', width: '38px', borderRadius: '50%', objectFit: 'cover', background: '#fff', border: '1px solid var(--border-mid)', padding: '2px' }}
               />
-              <span className="logo-wordmark">Sweet Shop</span>
+              <span className="logo-wordmark">Cacao & Crumb</span>
             </Link>
             <p style={{ marginTop: '16px' }}>
               Baked with love and premium ingredients since 1991. Delivering joy to your doorstep, one slice at a time.
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>&copy; {currentYear} Sweet Shop. All rights reserved.</span>
+          <span>&copy; {currentYear} Cacao & Crumb. All rights reserved.</span>
           <span style={{ opacity: 0.6 }}>Designed by kishan.</span>
         </div>
       </div>

@@ -8,7 +8,7 @@ export default function About() {
       <section className="page-header">
         <div className="container">
           <span className="section-label">Our Story</span>
-          <h1>Few Words About Sweet Shop</h1>
+          <h1>Few Words About Cacao & Crumb</h1>
           <p>
             Established in 1991, we have been baking delicious memories for decades. Discover our passion and dedication to sweetness.
           </p>

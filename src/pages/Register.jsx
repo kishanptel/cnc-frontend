@@ -92,7 +92,7 @@ export default function Register({ setIsLoading }) {
             <User size={22} />
           </div>
           <h2 style={{ fontSize: '1.65rem', fontWeight: '800', color: 'var(--navy)', marginBottom: '6px' }}>Create Account</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '.875rem' }}>Join Sweet Shop and upload your profile picture</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '.875rem' }}>Join Cacao & Crumb and upload your profile picture</p>
         </div>
 
         <form onSubmit={formik.handleSubmit} className="enquiry-form">
