@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Cake, ShoppingBag, Users, Calendar, Award } from 'lucide-react';
+import { Cake, ShoppingBag, Users, Calendar, Award, Star } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -181,23 +181,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - We Are Available On */}
       <section className="section-pad" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <div className="section-header centered" data-aos="fade-up">
-            <span className="section-label">Testimonials</span>
-            <h2 className="section-title">Sweet Words from Our Clients</h2>
+            <span className="section-label">We Are Available On</span>
+            <h2 className="section-title">Loved by Thousands on Swiggy, Zomato & Google</h2>
           </div>
 
-          <div className="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-            <blockquote className="testimonial-quote">
-              “The cakes for our wedding were not only stunningly beautiful but absolutely delicious! Every guest commented on how light and flavorful they were. We could not be happier with the service and quality.”
-            </blockquote>
-            <div className="testimonial-author">
-              <div className="testimonial-avatar">MM</div>
-              <div>
-                <span className="testimonial-name">Mia Myers</span>
-                <span className="testimonial-role" style={{ display: 'block' }}>Wedding Client</span>
+          <div className="testimonials-grid">
+            {/* Swiggy Testimonial */}
+            <div className="testimonial-card" data-aos="fade-up" data-aos-delay="100" style={{ margin: '0' }}>
+              <div className="testimonial-platform">
+                <span className="platform-badge swiggy">Swiggy</span>
+                <span className="platform-rating">
+                  <Star size={14} fill="#fc8019" style={{ color: '#fc8019' }} /> 4.8
+                </span>
+              </div>
+              <blockquote className="testimonial-quote" style={{ fontSize: '0.98rem' }}>
+                “Ordered the Chocolate Fudge cake for my sister's birthday. It arrived in 20 minutes, perfectly fresh and absolutely decadent! Swiggy delivery was super fast!”
+              </blockquote>
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">XS</div>
+                <div>
+                  <span className="testimonial-name">xxxxxxxx</span>
+                  <span className="testimonial-role" style={{ display: 'block' }}>Verified Buyer</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Zomato Testimonial */}
+            <div className="testimonial-card" data-aos="fade-up" data-aos-delay="200" style={{ margin: '0' }}>
+              <div className="testimonial-platform">
+                <span className="platform-badge zomato">Zomato</span>
+                <span className="platform-rating">
+                  <Star size={14} fill="#cb202d" style={{ color: '#cb202d' }} /> 4.9
+                </span>
+              </div>
+              <blockquote className="testimonial-quote" style={{ fontSize: '0.98rem' }}>
+                “The Red Velvet cake from Cacao & Crumb is a work of art. My go-to order on Zomato!”
+              </blockquote>
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">XP</div>
+                <div>
+                  <span className="testimonial-name">xxxxxxxx</span>
+                  <span className="testimonial-role" style={{ display: 'block' }}>Verified Buyer</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Testimonial */}
+            <div className="testimonial-card" data-aos="fade-up" data-aos-delay="300" style={{ margin: '0' }}>
+              <div className="testimonial-platform">
+                <span className="platform-badge google">Google</span>
+                <span className="platform-rating">
+                  <Star size={14} fill="#4285f4" style={{ color: '#4285f4' }} /> 4.9
+                </span>
+              </div>
+              <blockquote className="testimonial-quote" style={{ fontSize: '0.98rem' }}>
+                “Visited the physical shop in Surat. The interior smells divine and the bakers are warm. Their Pistachio cake is out of this world!”
+              </blockquote>
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">XM</div>
+                <div>
+                  <span className="testimonial-name">xxxxxxxx</span>
+                  <span className="testimonial-role" style={{ display: 'block' }}>Local Guide</span>
+                </div>
               </div>
             </div>
           </div>
