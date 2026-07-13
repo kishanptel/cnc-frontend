@@ -29,7 +29,36 @@ function ScrollToTopAndAOS() {
 
 export default function App() {
   // Global States
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(() => {
+    const saved = localStorage.getItem('cnc_user');
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  // Sync user state to localStorage
+  useEffect(() => {
+    if (currentUser) {
+      localStorage.setItem('cnc_user', JSON.stringify(currentUser));
+    } else {
+      localStorage.removeItem('cnc_user');
+    }
+  }, [currentUser]);
+
+  // Check backend session on mount to keep it synchronized
+  useEffect(() => {
+    const verifySession = async () => {
+      try {
+        const res = await instance.get('/users/me');
+        if (res.data?.success) {
+          setCurrentUser(res.data.Data);
+        }
+      } catch (err) {
+        if (err.response?.status === 401 || err.response?.status === 404) {
+          setCurrentUser(null);
+        }
+      }
+    };
+    verifySession();
+  }, []);
   const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem('sweet_shop_cart');
     return saved ? JSON.parse(saved) : [];
@@ -147,11 +176,17 @@ export default function App() {
   };
 
   // Logout operation
-  const logout = (msg = 'Logged out successfully.') => {
+  const logout = async (msg = 'Logged out successfully.') => {
     setCurrentUser(null);
     setCart([]);
+    localStorage.removeItem('cnc_user');
     if (msg) {
       addToast(msg, 'info');
+    }
+    try {
+      await instance.post('/users/logout');
+    } catch (e) {
+      // Ignored
     }
   };
 
