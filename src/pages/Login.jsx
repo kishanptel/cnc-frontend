@@ -113,7 +113,7 @@ export default function Login({ setCurrentUser, addToast, setIsLoading }) {
             ) : null}
           </div>
 
-          <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+          <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '12px', marginBottom: '28px' }}>
             <input 
               type="checkbox" 
               id="rememberMe" 

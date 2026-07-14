@@ -54,7 +54,11 @@ export default function App() {
       try {
         const res = await instance.get('/users/me');
         if (res.data?.success) {
-          setCurrentUser(res.data.Data);
+          if (!res.data.Data.isAdmin) {
+            setCurrentUser(res.data.Data);
+          } else {
+            setCurrentUser(null);
+          }
         }
       } catch (err) {
         if (err.response?.status === 401 || err.response?.status === 404) {
