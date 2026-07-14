@@ -113,14 +113,14 @@ export default function Login({ setCurrentUser, addToast, setIsLoading }) {
             ) : null}
           </div>
 
-          <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '12px', marginBottom: '28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', margin: '24px 0 28px' }}>
             <input 
               type="checkbox" 
               id="rememberMe" 
               {...formik.getFieldProps('rememberMe')}
-              style={{ width: '16px', height: '16px', cursor: 'pointer', accentColor: 'var(--accent)' }}
+              style={{ width: '18px', height: '18px', cursor: 'pointer', accentColor: 'var(--accent)', marginRight: '10px' }}
             />
-            <label htmlFor="rememberMe" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', cursor: 'pointer', userSelect: 'none' }}>
+            <label htmlFor="rememberMe" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', cursor: 'pointer', userSelect: 'none', lineHeight: 1 }}>
               Remember Me
             </label>
           </div>
