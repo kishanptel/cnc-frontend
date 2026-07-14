@@ -30,16 +30,21 @@ function ScrollToTopAndAOS() {
 export default function App() {
   // Global States
   const [currentUser, setCurrentUser] = useState(() => {
-    const saved = localStorage.getItem('cnc_user');
+    const saved = localStorage.getItem('cacaoncrumb_user') || sessionStorage.getItem('cacaoncrumb_user');
     return saved ? JSON.parse(saved) : null;
   });
 
-  // Sync user state to localStorage
+  // Sync user state to active storage
   useEffect(() => {
     if (currentUser) {
-      localStorage.setItem('cnc_user', JSON.stringify(currentUser));
+      if (localStorage.getItem('cacaoncrumb_user')) {
+        localStorage.setItem('cacaoncrumb_user', JSON.stringify(currentUser));
+      } else {
+        sessionStorage.setItem('cacaoncrumb_user', JSON.stringify(currentUser));
+      }
     } else {
-      localStorage.removeItem('cnc_user');
+      localStorage.removeItem('cacaoncrumb_user');
+      sessionStorage.removeItem('cacaoncrumb_user');
     }
   }, [currentUser]);
 
@@ -60,7 +65,7 @@ export default function App() {
     verifySession();
   }, []);
   const [cart, setCart] = useState(() => {
-    const saved = localStorage.getItem('sweet_shop_cart');
+    const saved = localStorage.getItem('cacaoncrumb_cart');
     return saved ? JSON.parse(saved) : [];
   });
   const [toasts, setToasts] = useState([]);
@@ -69,7 +74,7 @@ export default function App() {
 
   // Sync cart to localStorage
   useEffect(() => {
-    localStorage.setItem('sweet_shop_cart', JSON.stringify(cart));
+    localStorage.setItem('cacaoncrumb_cart', JSON.stringify(cart));
   }, [cart]);
 
   // AOS Init
@@ -179,7 +184,8 @@ export default function App() {
   const logout = async (msg = 'Logged out successfully.') => {
     setCurrentUser(null);
     setCart([]);
-    localStorage.removeItem('cnc_user');
+    localStorage.removeItem('cacaoncrumb_user');
+    sessionStorage.removeItem('cacaoncrumb_user');
     if (msg) {
       addToast(msg, 'info');
     }
@@ -240,7 +246,7 @@ export default function App() {
           <div className="global-loader-overlay">
             <div className="loader-spinner-wrap">
               <div className="loader-circle-spinner"></div>
-              <img src="/sweet_shop_logo.png" alt="Pulsing Cake" className="loader-logo-pulsing" />
+              <img src="/cacaoncrumb_logo.png" alt="Pulsing Cake" className="loader-logo-pulsing" />
             </div>
             <p className="loader-text">Baking happiness...</p>
           </div>

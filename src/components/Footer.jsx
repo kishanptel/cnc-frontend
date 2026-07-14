@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="logo">
               <img
-                src="/sweet_shop_logo.png"
+                src="/cacaoncrumb_logo.png"
                 alt="Cacao & Crumb Logo"
                 style={{ height: '38px', width: '38px', borderRadius: '50%', objectFit: 'cover', background: '#fff', border: '1px solid var(--border-mid)', padding: '2px' }}
               />
@@ -40,7 +40,7 @@ export default function Footer() {
                 Plot No. 45, XYZ, Surat - 666777
               </span>
               <a href="tel:+91XXXXXXXXXX">Tel: +91 XXXXXXXXXX</a>
-              <a href="mailto:info@sweetshop.in">info@sweetshop.in</a>
+              <a href="mailto:info@cacaoncrumb.com">info@cacaoncrumb.com</a>
             </div>
           </div>
         </div>

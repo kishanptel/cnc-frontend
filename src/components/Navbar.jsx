@@ -57,7 +57,7 @@ export default function Navbar({ currentUser, logout, cart, updateQuantity, remo
           {/* Logo */}
           <Link to="/" className="logo" onClick={() => setCartOpen(false)}>
             <img 
-              src="/sweet_shop_logo.png" 
+              src="/cacaoncrumb_logo.png" 
               alt="Cacao & Crumb Logo" 
               style={{ height: '38px', width: '38px', borderRadius: '50%', objectFit: 'cover', background: '#fff', border: '1px solid var(--border-mid)' }} 
             />

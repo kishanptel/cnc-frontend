@@ -20,7 +20,8 @@ export default function Login({ setCurrentUser, addToast, setIsLoading }) {
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: ''
+      password: '',
+      rememberMe: true
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
@@ -32,12 +33,18 @@ export default function Login({ setCurrentUser, addToast, setIsLoading }) {
         });
         if (res.data?.success) {
           const userData = res.data.Data;
-          setCurrentUser({
+          const userPayload = {
             id: userData._id,
             name: userData.name,
             email: userData.email,
             profile: userData.profile
-          });
+          };
+          if (values.rememberMe) {
+            localStorage.setItem('cacaoncrumb_user', JSON.stringify(userPayload));
+          } else {
+            sessionStorage.setItem('cacaoncrumb_user', JSON.stringify(userPayload));
+          }
+          setCurrentUser(userPayload);
           addToast(`Welcome back, ${userData.name}!`, 'success');
           resetForm();
           navigate('/our-cakes');
@@ -84,7 +91,7 @@ export default function Login({ setCurrentUser, addToast, setIsLoading }) {
             ) : null}
           </div>
 
-          <div className="form-group" style={{ marginBottom: '24px' }}>
+          <div className="form-group" style={{ marginBottom: '16px' }}>
             <label htmlFor="password" className="form-label">Password *</label>
             <div style={{ position: 'relative' }}>
               <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>
@@ -104,6 +111,18 @@ export default function Login({ setCurrentUser, addToast, setIsLoading }) {
                 {formik.errors.password}
               </div>
             ) : null}
+          </div>
+
+          <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+            <input 
+              type="checkbox" 
+              id="rememberMe" 
+              {...formik.getFieldProps('rememberMe')}
+              style={{ width: '16px', height: '16px', cursor: 'pointer', accentColor: 'var(--accent)' }}
+            />
+            <label htmlFor="rememberMe" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', cursor: 'pointer', userSelect: 'none' }}>
+              Remember Me
+            </label>
           </div>
 
           <button type="submit" className="btn btn-primary btn-block">
