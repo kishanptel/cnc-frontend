@@ -40,7 +40,7 @@ export default function Footer() {
                 Plot No. 45, XYZ, Surat - 666777
               </span>
               <a href="tel:+91XXXXXXXXXX">Tel: +91 XXXXXXXXXX</a>
-              <a href="mailto:info@cacaoncrumb.com">info@cacaoncrumb.com</a>
+              <a href="mailto:info@cacaoncrumb.in">info@cacaoncrumb.in</a>
             </div>
           </div>
         </div>

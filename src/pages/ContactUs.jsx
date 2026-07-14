@@ -89,8 +89,8 @@ export default function ContactUs({ setIsLoading }) {
                   </div>
                   <div>
                     <div className="contact-method-label">Email Us</div>
-                    <a href="mailto:info@cacaoncrumb.com" className="contact-method-value" style={{ color: 'var(--navy)', display: 'block' }}>
-                      info@cacaoncrumb.com
+                    <a href="mailto:info@cacaoncrumb.in" className="contact-method-value" style={{ color: 'var(--navy)', display: 'block' }}>
+                      info@cacaoncrumb.in
                     </a>
                   </div>
                 </div>
